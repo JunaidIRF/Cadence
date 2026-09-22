@@ -1,0 +1,17 @@
+{
+  "name": "cadence",
+  "version": "1.0.0",
+  "description": "Minimalist code typing speed test for developers",
+  "type": "commonjs",
+  "scripts": {
+    "test": "node --test test/logic.test.js"
+  },
+  "keywords": [
+    "typing-test",
+    "developer",
+    "wpm",
+    "speed-test"
+  ],
+  "author": "Junaid Irfan",
+  "license": "MIT"
+}

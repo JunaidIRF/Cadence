@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadence | Code Typing Speed Test</title>
+  <meta name="description" content="A minimalist code typing speed test for developers. Test and improve your programming typing speed and accuracy.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <header class="app-header">
+      <div class="brand">
+        <!-- Lucide Terminal Icon (official open-source SVG from github.com/lucide-icons/lucide) -->
+        <svg class="brand-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="4 17 10 11 4 5"/>
+          <line x1="12" x2="20" y1="19" y2="19"/>
+        </svg>
+        <h1 class="logo">Cadence</h1>
+        <span class="tagline">code typing test</span>
+      </div>
+
+      <div class="controls">
+        <!-- Language Group: Official Devicon vectors from github.com/devicons/devicon -->
+        <div class="control-section">
+          <div class="segmented-group">
+            <button class="seg-btn active" data-lang="cpp" title="C++">
+              <!-- Official C++ vector from devicons/devicon -->
+              <svg class="lang-icon" viewBox="0 0 128 128" width="15" height="15" aria-hidden="true">
+                <path fill="#00599c" d="M118.766 95.82c.89-1.543 1.441-3.28 1.441-4.843V36.78c0-1.558-.55-3.297-1.441-4.84l-55.32 31.94Zm0 0"/>
+                <path fill="#004482" d="m68.36 126.586 46.933-27.094c1.352-.781 2.582-2.129 3.473-3.672l-55.32-31.94L8.12 95.82c.89 1.543 2.121 2.89 3.473 3.672l46.933 27.094c2.703 1.562 7.13 1.562 9.832 0Zm0 0"/>
+                <path fill="#659ad2" d="M118.766 31.941c-.891-1.546-2.121-2.894-3.473-3.671L68.359 1.172c-2.703-1.563-7.129-1.563-9.832 0L11.594 28.27C8.89 29.828 6.68 33.66 6.68 36.78v54.196c0 1.562.55 3.3 1.441 4.843L63.445 63.88Zm0 0"/>
+                <path fill="#fff" d="M63.445 26.035c-20.867 0-37.843 16.977-37.843 37.844s16.976 37.844 37.843 37.844c13.465 0 26.024-7.247 32.77-18.91L79.84 73.335c-3.38 5.84-9.66 9.465-16.395 9.465-10.433 0-18.922-8.488-18.922-18.922 0-10.434 8.49-18.922 18.922-18.922 6.73 0 13.017 3.629 16.39 9.465l16.38-9.477c-6.75-11.664-19.305-18.91-32.77-18.91zM92.88 57.57v4.207h-4.207v4.203h4.207v4.207h4.203V65.98h4.203v-4.203h-4.203V57.57H92.88zm15.766 0v4.207h-4.204v4.203h4.204v4.207h4.207V65.98h4.203v-4.203h-4.203V57.57h-4.207z"/>
+              </svg>
+              <span>C++</span>
+            </button>
+            <button class="seg-btn" data-lang="java" title="Java">
+              <!-- Official Java vector from devicons/devicon -->
+              <svg class="lang-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="15" height="15" aria-hidden="true">
+                <path fill="#0074BD" d="M47.617 98.12s-4.767 2.774 3.397 3.71c9.892 1.13 14.947.968 25.845-1.092 0 0 2.871 1.795 6.873 3.351-24.439 10.47-55.308-.607-36.115-5.969zm-2.988-13.665s-5.348 3.959 2.823 4.805c10.567 1.091 18.91 1.18 33.354-1.6 0 0 1.993 2.025 5.132 3.131-29.542 8.64-62.446.68-41.309-6.336z"/>
+                <path fill="#EA2D2E" d="M69.802 61.271c6.025 6.935-1.58 13.17-1.58 13.17s15.289-7.891 8.269-17.777c-6.559-9.215-11.587-13.792 15.635-29.58 0 .001-42.731 10.67-22.324 34.187z"/>
+                <path fill="#0074BD" d="M102.123 108.229s3.529 2.91-3.888 5.159c-14.102 4.272-58.706 5.56-71.094.171-4.451-1.938 3.899-4.625 6.526-5.192 2.739-.593 4.303-.485 4.303-.485-4.953-3.487-32.013 6.85-13.743 9.815 49.821 8.076 90.817-3.637 77.896-9.468zM49.912 70.294s-22.686 5.389-8.033 7.348c6.188.828 18.518.638 30.011-.326 9.39-.789 18.813-2.474 18.813-2.474s-3.308 1.419-5.704 3.053c-23.042 6.061-67.544 3.238-54.731-2.958 10.832-5.239 19.644-4.643 19.644-4.643zm40.697 22.747c23.421-12.167 12.591-23.86 5.032-22.285-1.848.385-2.677.72-2.677.72s.688-1.079 2-1.543c14.953-5.255 26.451 15.503-4.823 23.725 0-.002.359-.327.468-.617z"/>
+                <path fill="#EA2D2E" d="M76.491 1.587S89.459 14.563 64.188 34.51c-20.266 16.006-4.621 25.13-.007 35.559-11.831-10.673-20.509-20.07-14.688-28.815C58.041 28.42 81.722 22.195 76.491 1.587z"/>
+                <path fill="#0074BD" d="M52.214 126.021c22.476 1.437 57-.8 57.817-11.436 0 0-1.571 4.032-18.577 7.231-19.186 3.612-42.854 3.191-56.887.874 0 .001 2.875 2.381 17.647 3.331z"/>
+              </svg>
+              <span>Java</span>
+            </button>
+            <button class="seg-btn" data-lang="csharp" title="C#">
+              <!-- Official C# vector from devicons/devicon -->
+              <svg class="lang-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="15" height="15" aria-hidden="true">
+                <path fill="#9B4F96" d="M115.4 30.7L67.1 2.9c-.8-.5-1.9-.7-3.1-.7-1.2 0-2.3.3-3.1.7l-48 27.9c-1.7 1-2.9 3.5-2.9 5.4v55.7c0 1.1.2 2.4 1 3.5l106.8-62c-.6-1.2-1.5-2.1-2.4-2.7z"/>
+                <path fill="#68217A" d="M10.7 95.3c.5.8 1.2 1.5 1.9 1.9l48.2 27.9c.8.5 1.9.7 3.1.7 1.2 0 2.3-.3 3.1-.7l48-27.9c1.7-1 2.9-3.5 2.9-5.4V36.1c0-.9-.1-1.9-.6-2.8l-106.6 62z"/>
+                <path fill="#fff" d="M85.3 76.1C81.1 83.5 73.1 88.5 64 88.5c-13.5 0-24.5-11-24.5-24.5s11-24.5 24.5-24.5c9.1 0 17.1 5 21.3 12.5l13-7.5c-6.8-11.9-19.6-20-34.3-20-21.8 0-39.5 17.7-39.5 39.5s17.7 39.5 39.5 39.5c14.6 0 27.4-8 34.2-19.8l-12.9-7.6zM97 66.2l.9-4.3h-4.2v-4.7h5.1L100 51h4.9l-1.2 6.1h3.8l1.2-6.1h4.8l-1.2 6.1h2.4v4.7h-3.3l-.9 4.3h4.2v4.7h-5.1l-1.2 6h-4.9l1.2-6h-3.8l-1.2 6h-4.8l1.2-6h-2.4v-4.7H97zm4.8 0h3.8l.9-4.3h-3.8l-.9 4.3z"/>
+              </svg>
+              <span>C#</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Difficulty Group with Lucide signal vectors -->
+        <div class="control-section">
+          <div class="segmented-group">
+            <button class="seg-btn active" data-diff="easy" title="Easy difficulty">
+              <!-- Lucide signal-low from github.com/lucide-icons/lucide -->
+              <svg class="diff-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 20h.01" />
+                <path d="M7 20v-4" />
+              </svg>
+              <span>easy</span>
+            </button>
+            <button class="seg-btn" data-diff="medium" title="Medium difficulty">
+              <!-- Lucide signal-medium from github.com/lucide-icons/lucide -->
+              <svg class="diff-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 20h.01" />
+                <path d="M7 20v-4" />
+                <path d="M12 20v-8" />
+              </svg>
+              <span>med</span>
+            </button>
+            <button class="seg-btn" data-diff="hard" title="Hard difficulty">
+              <!-- Lucide signal-high from github.com/lucide-icons/lucide -->
+              <svg class="diff-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 20h.01" />
+                <path d="M7 20v-4" />
+                <path d="M12 20v-8" />
+                <path d="M17 20V8" />
+              </svg>
+              <span>hard</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Time Group -->
+        <div class="control-section">
+          <div class="segmented-group">
+            <button class="seg-btn" data-time="15">15s</button>
+            <button class="seg-btn active" data-time="30">30s</button>
+            <button class="seg-btn" data-time="60">60s</button>
+          </div>
+        </div>
+
+        <!-- Minimalist Icon-Only Restart Button -->
+        <button id="restart-btn" class="btn btn-icon-only" title="Restart test (Esc)" aria-label="Restart test">
+          <!-- Lucide Rotate-CCW Icon -->
+          <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+            <path d="M3 3v5h5"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="test-container">
+      <div class="hud">
+        <div class="hud-item">
+          <div class="hud-header">
+            <!-- Lucide Timer Icon -->
+            <svg class="hud-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <span class="hud-label">time</span>
+          </div>
+          <span id="time-display" class="hud-value">0:30</span>
+        </div>
+
+        <div class="hud-item">
+          <div class="hud-header">
+            <!-- Lucide Zap Icon -->
+            <svg class="hud-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+            <span class="hud-label">wpm</span>
+          </div>
+          <span id="wpm-display" class="hud-value">0</span>
+        </div>
+
+        <div class="hud-item">
+          <div class="hud-header">
+            <!-- Lucide Target Icon -->
+            <svg class="hud-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="6"/>
+              <circle cx="12" cy="12" r="2"/>
+            </svg>
+            <span class="hud-label">accuracy</span>
+          </div>
+          <span id="acc-display" class="hud-value">100%</span>
+        </div>
+      </div>
+
+      <div class="typing-box" id="typing-box">
+        <!-- Strictly Anti-Slop Metadata: Plain unboxed typography, zero yellow status boxes -->
+        <div class="snippet-meta">
+          <div class="snippet-info">
+            <span id="snippet-title" class="snippet-title">Hello World</span>
+            <span class="meta-sep">&bull;</span>
+            <span id="snippet-diff-badge" class="snippet-diff">easy</span>
+          </div>
+
+          <button id="reroll-btn" class="btn-text-reroll" title="Reroll snippet" aria-label="Reroll snippet">
+            <!-- Lucide Dices Icon from github.com/lucide-icons/lucide -->
+            <svg class="reroll-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect width="12" height="12" x="2" y="10" rx="2" ry="2" />
+              <path d="m17.92 14 3.5-3.5a2.24 2.24 0 0 0 0-3l-5-4.92a2.24 2.24 0 0 0-3 0L10 6" />
+              <path d="M6 18h.01" />
+              <path d="M10 14h.01" />
+              <path d="M15 6h.01" />
+              <path d="M18 9h.01" />
+            </svg>
+            <span>reroll</span>
+          </button>
+        </div>
+
+        <div id="caret" class="caret"></div>
+        <pre id="snippet-display" class="snippet-display" aria-label="Code snippet to type"></pre>
+        <textarea id="hidden-input" class="hidden-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+      </div>
+
+      <div class="instruction">
+        <span>Click or start typing. Press <kbd>Esc</kbd> to restart.</span>
+      </div>
+    </main>
+
+    <div id="results-card" class="modal-overlay" hidden aria-hidden="true">
+      <div class="modal-content">
+        <div class="modal-head">
+          <!-- Lucide Check-Circle Icon -->
+          <svg class="modal-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+          <h2 class="modal-title">Summary</h2>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-col">
+            <span class="stat-num" id="result-wpm">0</span>
+            <span class="stat-lbl">WPM</span>
+          </div>
+          <div class="stat-col">
+            <span class="stat-num" id="result-acc">0%</span>
+            <span class="stat-lbl">Accuracy</span>
+          </div>
+          <div class="stat-col">
+            <span class="stat-num" id="result-chars">0/0</span>
+            <span class="stat-lbl">Characters</span>
+          </div>
+          <div class="stat-col">
+            <span class="stat-num" id="result-errors">0</span>
+            <span class="stat-lbl">Errors</span>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button id="result-restart-btn" class="btn btn-primary">
+            <span>Next Snippet</span>
+            <!-- Lucide Arrow-Right Icon -->
+            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="app-footer">
+      <span>Cadence &bull; code typing test</span>
+    </footer>
+  </div>
+
+  <script src="src/logic.js"></script>
+  <script src="src/syntax.js"></script>
+  <script src="src/snippets.js"></script>
+  <script src="src/app.js"></script>
+</body>
+</html>
