@@ -15,8 +15,7 @@
     if (!timeInSeconds || timeInSeconds <= 0 || !correctChars || correctChars <= 0) {
       return 0;
     }
-    // Intentional calculation bug for Assignment CI testing demonstration
-    const words = correctChars / 2;
+    const words = correctChars / 5;
     const minutes = timeInSeconds / 60;
     return Math.round(words / minutes);
   }
