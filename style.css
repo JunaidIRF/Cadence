@@ -1,0 +1,573 @@
+/* ==========================================================================
+   Cadence Design System — Anti-Slop Compliant (killaislop.com)
+   - Typography: Satoshi / Outfit (UI) + JetBrains Mono (Code/Metrics)
+   - Strict Anti-Slop: Zero pill badges (#23), zero one-hue status boxes (#05)
+   - Clean unboxed metadata, pure typographic language pills, no squished header
+   ========================================================================== */
+
+:root {
+  --bg-primary: #0a0d12;
+  --bg-secondary: #12161f;
+  --bg-surface: #1a202c;
+  --border-color: #242b38;
+  --border-focus: #58a6ff;
+
+  --text-primary: #f0f3f6;
+  --text-secondary: #8b97a8;
+  --text-muted: #566173;
+
+  /* Syntax Highlighting Colors (GitHub Dark Dimmed / Tokyo Night) */
+  --syn-keyword: #ff7b72;
+  --syn-function: #d2a8ff;
+  --syn-string: #7ee787;
+  --syn-number: #79c0ff;
+  --syn-type: #ffa657;
+  --syn-comment: #8b949e;
+  --syn-operator: #79c0ff;
+  --syn-plain: #e6edf3;
+
+  /* Error state */
+  --char-incorrect: #ff6b6b;
+  --char-incorrect-bg: rgba(255, 107, 107, 0.22);
+
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  --font-sans: "Satoshi", "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-layout {
+  max-width: 1060px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* ── Header ── */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.75rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  gap: 2rem;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  flex-shrink: 0;
+  min-width: max-content;
+  white-space: nowrap;
+}
+
+.brand-icon {
+  color: var(--border-focus);
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.logo {
+  font-family: var(--font-sans);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.tagline {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  white-space: nowrap;
+  margin-left: 0.25rem;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.control-section {
+  display: flex;
+  align-items: center;
+}
+
+/* ── Segmented Pill Controls (Clean Typography, Zero Clunky Icons) ── */
+.segmented-group {
+  display: flex;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 2px;
+  gap: 2px;
+}
+
+.seg-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.28rem 0.65rem;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  transition: background-color 0.12s ease, color 0.12s ease;
+}
+
+.seg-btn:hover {
+  color: var(--text-primary);
+}
+
+.seg-btn.active {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.seg-btn .lang-icon,
+.seg-btn .diff-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.seg-btn .diff-icon {
+  color: currentColor;
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid transparent;
+  transition: background-color 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+}
+
+/* Icon-Only Restart Button */
+.btn-icon-only {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  justify-content: center;
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+.btn-icon-only:hover {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border-color: var(--text-secondary);
+}
+
+.btn-icon-only .btn-icon {
+  transition: transform 0.25s ease;
+}
+
+.btn-icon-only:hover .btn-icon {
+  color: var(--text-primary);
+  transform: rotate(-90deg);
+}
+
+.btn-primary {
+  padding: 0.45rem 1rem;
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
+}
+
+.btn-primary:hover {
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* ── Main Test Container ── */
+.test-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+/* ── Live HUD ── */
+.hud {
+  display: flex;
+  gap: 3.5rem;
+}
+
+.hud-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.hud-header {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.3rem;
+}
+
+.hud-icon {
+  color: var(--text-muted);
+}
+
+.hud-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.hud-value {
+  font-family: var(--font-mono);
+  font-size: 2.15rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+/* ── Typing Box ── */
+.typing-box {
+  position: relative;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem 2.25rem 2.25rem 2.25rem;
+  min-height: 250px;
+  cursor: text;
+}
+
+/* Snippet Metadata Header (Anti-Slop: Plain unboxed text, zero pills) */
+.snippet-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(36, 43, 56, 0.6);
+  position: relative;
+  z-index: 2;
+}
+
+.snippet-info {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.snippet-title {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.meta-sep {
+  color: var(--text-muted);
+  font-size: 0.65rem;
+}
+
+.snippet-diff {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+/* Minimalist Text-Only Reroll Button (No bulky bordered box) */
+.btn-text-reroll {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  position: relative;
+  z-index: 2;
+  transition: color 0.12s ease;
+}
+
+.btn-text-reroll:hover {
+  color: var(--text-primary);
+}
+
+.btn-text-reroll .reroll-icon {
+  color: var(--text-muted);
+  transition: transform 0.2s ease, color 0.12s ease;
+}
+
+.btn-text-reroll:hover .reroll-icon {
+  color: var(--text-primary);
+  transform: rotate(45deg);
+}
+
+.snippet-display {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  line-height: 1.9;
+  letter-spacing: -0.01em;
+  white-space: pre-wrap;
+  word-break: break-all;
+  user-select: none;
+}
+
+/* ── Character & Syntax States ── */
+.char {
+  transition: color 0.05s ease, background-color 0.05s ease;
+}
+
+/* Untyped: subtle muted syntax coloring */
+.char.untyped {
+  opacity: 0.38;
+}
+.char.untyped.tok-keyword { color: var(--syn-keyword); }
+.char.untyped.tok-function { color: var(--syn-function); }
+.char.untyped.tok-string { color: var(--syn-string); }
+.char.untyped.tok-number { color: var(--syn-number); }
+.char.untyped.tok-type { color: var(--syn-type); }
+.char.untyped.tok-comment { color: var(--syn-comment); font-style: italic; }
+.char.untyped.tok-operator { color: var(--syn-operator); }
+.char.untyped.tok-plain { color: var(--syn-plain); }
+
+/* Correct: vivid, full-opacity syntax coloring */
+.char.correct {
+  opacity: 1;
+}
+.char.correct.tok-keyword { color: var(--syn-keyword); }
+.char.correct.tok-function { color: var(--syn-function); }
+.char.correct.tok-string { color: var(--syn-string); }
+.char.correct.tok-number { color: var(--syn-number); }
+.char.correct.tok-type { color: var(--syn-type); }
+.char.correct.tok-comment { color: var(--syn-comment); font-style: italic; }
+.char.correct.tok-operator { color: var(--syn-operator); }
+.char.correct.tok-plain { color: var(--syn-plain); }
+
+/* Incorrect: what the user typed in red with indicator */
+.char.incorrect {
+  opacity: 1;
+  color: var(--char-incorrect) !important;
+  background-color: var(--char-incorrect-bg);
+  border-bottom: 2px solid var(--char-incorrect);
+  border-radius: 2px;
+}
+
+.char.incorrect.char-space {
+  display: inline-block;
+  font-weight: 700;
+  padding: 0 1px;
+}
+
+/* Smooth Blinking Cursor Caret */
+.caret {
+  position: absolute;
+  width: 2px;
+  background-color: var(--border-focus);
+  pointer-events: none;
+  transition: left 0.06s ease, top 0.06s ease;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Hidden input to capture user typing */
+.hidden-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: default;
+  resize: none;
+  z-index: 1;
+}
+
+/* ── Instruction ── */
+.instruction {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+}
+
+kbd {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 0.15rem 0.4rem;
+  margin: 0 0.3rem;
+  color: var(--text-primary);
+}
+
+/* ── Results Modal (Strictly Anti-Slop: No cards inside cards) ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(10, 13, 18, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 1rem;
+}
+
+.modal-overlay[hidden],
+[hidden] {
+  display: none !important;
+}
+
+.modal-content {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  max-width: 480px;
+  width: 100%;
+  padding: 2.25rem;
+}
+
+.modal-head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.75rem;
+}
+
+.modal-icon {
+  color: var(--syn-string);
+}
+
+.modal-title {
+  font-family: var(--font-sans);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+/* Clean data row, no nested cards */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.stat-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-num {
+  font-family: var(--font-mono);
+  font-size: 1.85rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.stat-lbl {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ── Footer ── */
+.app-footer {
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+  .controls {
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 0.75rem;
+  }
+  .hud {
+    gap: 2rem;
+  }
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 1.5rem;
+  }
+  .snippet-display {
+    font-size: 1.05rem;
+  }
+}
