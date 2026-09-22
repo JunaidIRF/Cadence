@@ -1,4 +1,4 @@
-name: CI / CD Workflow
+name: CI Workflow
 
 on:
   push:
@@ -8,17 +8,7 @@ on:
     branches:
       - main
 
-permissions:
-  contents: write
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
-  # Job 1: Run Automated Tests
   test:
     name: Run Automated Tests
     runs-on: ubuntu-latest
@@ -34,40 +24,3 @@ jobs:
 
       - name: Run Unit Tests
         run: npm test
-
-  # Job 2: Deploy to GitHub Pages (only on push to main if tests pass)
-  deploy:
-    name: Deploy to GitHub Pages
-    needs: test
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v4
-        continue-on-error: true
-
-      - name: Upload artifact
-        if: steps.pages.outcome == 'success'
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: '.'
-
-      - name: Deploy to GitHub Pages
-        if: steps.pages.outcome == 'success'
-        id: deployment
-        uses: actions/deploy-pages@v4
-        continue-on-error: true
-
-      - name: Deploy to gh-pages branch
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
